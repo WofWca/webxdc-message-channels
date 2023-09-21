@@ -46,7 +46,7 @@ webxdcTransportDriver.sendMeta({
   info: `${webxdc.selfName} edited the document`,
   summary: `Last editor: ${webxdc.selfName}`,
   document: 'New release',
-})
+});
 ```
 
 <!-- TODO also showcase in-band channel negotiation (see
