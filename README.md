@@ -49,26 +49,6 @@ webxdcTransportDriver.sendMeta({
 })
 ```
 
-Each `channel.sendMessage` immediately invokes `webxdc.sendUpdate`
-under the hood,
-unless called inside `batch`:
-<!-- TODO idk, `batch` in this form looks a little stupid, because it doesn't
-look different from what this library is trying to solve, i.e. get rid of
-having to do all the messaging stuff in a single piece of code.
-
-I think something like throttling `webxdc.sendUpdate` is a better idea. -->
-
-```javascript
-webxdcTransportDriver.batch(() => {
-  channel1.sendMessage('foo');
-  channel2.sendMessage('bar');
-  webxdcTransportDriver.sendMeta({ summary: 'baz' })
-});
-```
-
-Use `batch` as much as possible to use the network more efficiently and not, say
-hit [the messenger's throttle limit](https://github.com/deltachat/deltachat-core-rust/blob/061d091c971ac8cb860f92e6e81c298dcffa8f26/src/context.rs#L385)
-
 <!-- TODO also showcase in-band channel negotiation (see
 [`negotiated` of `RTCPeerConnection.createDataChannel`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/createDataChannel)). -->
 
