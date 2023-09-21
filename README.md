@@ -9,6 +9,9 @@ The API is very similar to [WebRTC `RTCDataChannel`s](https://developer.mozilla.
 <!-- TODO Ok, I think striving for a realistic example is not the best approach.
 Better just go for the simplest example. -->
 
+<!-- TODO how do we handle `serial` of `setMessageListener`? You said we're
+gonna be batching updates. Actually it isn't really a problem, is it? -->
+
 ```javascript
 const webxdcTransportDriver = WebxdcNetworkDriver();
 
